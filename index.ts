@@ -1,5 +1,5 @@
 import { readFile } from 'node:fs/promises';
-import path from 'node:path';
+import { join } from 'node:path';
 
 async function main() {
   const [year, day, part] = process.argv.slice(2);
@@ -9,9 +9,9 @@ async function main() {
   }
 
   const paddedDay = day.padStart(2, '0');
-  const solutionPath = path.join(process.cwd(), 'src', year, `day${paddedDay}`, `part${part || '1'}.ts`);
+  const solutionPath = join(process.cwd(), 'src', year, `day${paddedDay}`, `part${part || '1'}.ts`);
 
-  const inputPath = path.join(process.cwd(), 'src', year, `day${paddedDay}`, 'input.txt');
+  const inputPath = join(process.cwd(), 'src', year, `day${paddedDay}`, 'input.txt');
 
   try {
     const { solve } = await import(solutionPath);
