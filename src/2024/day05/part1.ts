@@ -1,3 +1,3 @@
 export function solve(input: string) {
-  console.log('');
+  console.log('testing fix with just force');
 }
