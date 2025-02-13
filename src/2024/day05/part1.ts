@@ -1,1 +1,3 @@
-export function solve(input: string) {}
+export function solve(input: string) {
+  console.log('');
+}
